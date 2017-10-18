@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarSystemGenerator", "StarSystemGenerator.csproj", "{9F4E3F6E-9A0C-40B5-A52B-8511E5DAEE7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F4E3F6E-9A0C-40B5-A52B-8511E5DAEE7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F4E3F6E-9A0C-40B5-A52B-8511E5DAEE7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F4E3F6E-9A0C-40B5-A52B-8511E5DAEE7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F4E3F6E-9A0C-40B5-A52B-8511E5DAEE7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB43A566-0E4D-4CEF-BBFC-0FFA727BDF4A}
+	EndGlobalSection
+EndGlobal
