@@ -67,6 +67,10 @@
       <Project>{14051c8e-999d-4273-b7f6-d69058a18243}</Project>
       <Name>StarSystemFileSystem</Name>
     </ProjectReference>
+    <ProjectReference Include="..\StarSystemGenerator\StarSystemNavigator.Worker\StarSystemNavigator.Worker.csproj">
+      <Project>{e16e484b-723d-4374-984e-09cf41586468}</Project>
+      <Name>StarSystemNavigator.Worker</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

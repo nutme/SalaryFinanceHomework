@@ -2,6 +2,7 @@
 using Castle.Windsor;
 using SalaryFinanceHomework.StarSystemCore;
 using SalaryFinanceHomework.StarSystemFileSystem;
+using SalaryFinanceHomework.StarSystemNavigator.Worker;
 using System;
 using System.Collections.Generic;
 
@@ -14,10 +15,10 @@ namespace SalaryFinanceHomework.StarSystemNavigator
         {
             var container = RegisterComponenets();
             var fileStore = container.Resolve<ISpaceStorage>();
-            
-            IEnumerable<ISpaceObject> spaceArray;
+            var simulationEngine = container.Resolve<ISpaceTimeFlightSimulation>();
 
             // Try to load file provided
+            IEnumerable<ISpaceObject> spaceArray;
             try
             {
                 var fileName = args[0];
@@ -28,6 +29,9 @@ namespace SalaryFinanceHomework.StarSystemNavigator
                 throw new ArgumentException("File name is wrong or file can not be imported", ex);
             }
 
+            // Find spaceship path to colonise it given space 
+            var visitedPlanets = simulationEngine.Run(spaceArray);
+
             container.Dispose();
             Console.ReadKey();
             return 0;
@@ -37,6 +41,9 @@ namespace SalaryFinanceHomework.StarSystemNavigator
         {
             var container = new WindsorContainer();
             container.Register(Component.For<ISpaceStorage>().ImplementedBy<SpaceStorage>());
+            container.Register(Component.For<IStarSystemFilter>().ImplementedBy<StarSystemFilter>());
+            container.Register(Component.For<ISpaceTimeFlightSimulation>().ImplementedBy<SpaceTimeFlightSimulation>());
+ 
             return container;
         }
     }

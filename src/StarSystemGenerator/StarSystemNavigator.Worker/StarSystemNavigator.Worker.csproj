@@ -41,7 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColonizationMeter.cs" />
+    <Compile Include="ISpaceTimeFlightSimulation.cs" />
+    <Compile Include="IStarSystemFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpaceTimeFlightSimulation.cs" />
     <Compile Include="Starship.cs" />
     <Compile Include="StarSystemFilter.cs" />
   </ItemGroup>
