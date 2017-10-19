@@ -1,6 +1,6 @@
 ﻿namespace SalaryFinanceHomework.StarSystemCore
 {
-    interface ISpaceObject
+    public interface ISpaceObject
     {
         SpaceCoordinate SpaceCoordinate { get; }
         SpaceObjectType SpaceObjectType { get; }

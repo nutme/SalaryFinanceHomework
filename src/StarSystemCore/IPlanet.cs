@@ -1,6 +1,6 @@
 ﻿namespace SalaryFinanceHomework.StarSystemCore
 {
-    interface IPlanet
+    public interface IPlanet
     {
         bool Habitable { get; }
         int SurfaceArea { get; }
