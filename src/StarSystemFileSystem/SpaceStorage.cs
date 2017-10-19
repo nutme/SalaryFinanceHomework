@@ -9,8 +9,11 @@ namespace SalaryFinanceHomework.StarSystemFileSystem
     /// Class to save and load space on file system
     /// Data is stored in binary format inside of TXT file
     /// Binnery serialiazed files are much faster than plain text or XML
+    /// 
+    /// problem wth text based storage is parsing
+    /// it adds complexity and is slow
     /// </summary>
-    public class SpaceStorage
+    public class SpaceStorage : ISpaceStorage
     {
         public string SaveSpace(IEnumerable<ISpaceObject> spaceArray)
         {

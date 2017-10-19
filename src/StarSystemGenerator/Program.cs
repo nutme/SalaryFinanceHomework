@@ -14,6 +14,10 @@ namespace SalaryFinanceHomework.StarSystemGenerator
             var randomnessProvider = new CryptoRandomnessProvider();
             var spacePopulator = new SpacePopulator(randomnessProvider);
 
+            // Generating all space objects in one go and writing to the file
+            // is better than writing one by one as it gets generated.
+            // Reason for it is that file system I/O operations are expensive 
+
             // run accuall space generation
             var randomSpace = spacePopulator.Run(SpaceRules.SpaceSystemCapacity);
 
