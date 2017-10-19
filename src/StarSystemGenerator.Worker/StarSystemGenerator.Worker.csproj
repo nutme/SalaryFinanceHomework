@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CryptoRandomnessProvider.cs" />
     <Compile Include="IRandomnessProvider.cs" />
+    <Compile Include="ISpacePopulator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpacePopulator.cs" />
   </ItemGroup>

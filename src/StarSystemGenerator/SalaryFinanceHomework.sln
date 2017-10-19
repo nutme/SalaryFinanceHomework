@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarSystemFileSystem.Tests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarSystemNavigator", "..\StarSystemNavigator\StarSystemNavigator.csproj", "{3A688E1A-AB27-45DC-827E-87066F8AD187}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarSystemNavigator.Worker", "StarSystemNavigator.Worker\StarSystemNavigator.Worker.csproj", "{E16E484B-723D-4374-984E-09CF41586468}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{3A688E1A-AB27-45DC-827E-87066F8AD187}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A688E1A-AB27-45DC-827E-87066F8AD187}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A688E1A-AB27-45DC-827E-87066F8AD187}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E16E484B-723D-4374-984E-09CF41586468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E16E484B-723D-4374-984E-09CF41586468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E16E484B-723D-4374-984E-09CF41586468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E16E484B-723D-4374-984E-09CF41586468}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

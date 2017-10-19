@@ -2,6 +2,8 @@
 using SalaryFinanceHomework.StarSystemFileSystem;
 using SalaryFinanceHomework.StarSystemGenerator.Worker;
 using System;
+using Castle.MicroKernel.Registration;
+using Castle.Windsor;
 
 namespace SalaryFinanceHomework.StarSystemGenerator
 {
@@ -9,10 +11,12 @@ namespace SalaryFinanceHomework.StarSystemGenerator
     {
         static int Main(string[] args)
         {
+            var container = RegisterComponenets();
+            var spacePopulator = container.Resolve<ISpacePopulator>();
+            var fileStore = container.Resolve<ISpaceStorage>();
+
             // creating instance of random generator & space object generator
             Console.WriteLine("Generating planets from interspace void");
-            var randomnessProvider = new CryptoRandomnessProvider();
-            var spacePopulator = new SpacePopulator(randomnessProvider);
 
             // Generating all space objects in one go and writing to the file
             // is better than writing one by one as it gets generated.
@@ -23,12 +27,21 @@ namespace SalaryFinanceHomework.StarSystemGenerator
 
             // write results to the file
             Console.WriteLine("Saving space to file store");
-            var fileStore = new SpaceStorage();
             var fileName = fileStore.SaveSpace(randomSpace);
 
             Console.WriteLine($"Saved space to file ${fileName}");
 
+            container.Dispose();
             return 0;
+        }
+
+        private static WindsorContainer RegisterComponenets()
+        {
+            var container = new WindsorContainer();
+            container.Register(Component.For<ISpaceStorage>().ImplementedBy<SpaceStorage>());
+            container.Register(Component.For<IRandomnessProvider>().ImplementedBy<CryptoRandomnessProvider>());
+            container.Register(Component.For<ISpacePopulator>().ImplementedBy<SpacePopulator>());
+            return container;
         }
     }
 }

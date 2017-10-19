@@ -3,7 +3,7 @@ using SalaryFinanceHomework.StarSystemCore;
 
 namespace SalaryFinanceHomework.StarSystemGenerator.Worker
 {
-    public class SpacePopulator
+    public class SpacePopulator : ISpacePopulator
     {
         private readonly IRandomnessProvider randomnessProvider;
 

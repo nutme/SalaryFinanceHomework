@@ -1,7 +1,10 @@
-﻿using SalaryFinanceHomework.StarSystemCore;
+﻿using Castle.MicroKernel.Registration;
+using Castle.Windsor;
+using SalaryFinanceHomework.StarSystemCore;
 using SalaryFinanceHomework.StarSystemFileSystem;
 using System;
 using System.Collections.Generic;
+
 
 namespace SalaryFinanceHomework.StarSystemNavigator
 {
@@ -9,7 +12,9 @@ namespace SalaryFinanceHomework.StarSystemNavigator
     {
         static int Main(string[] args)
         {
-            var fileStore = new SpaceStorage();
+            var container = RegisterComponenets();
+            var fileStore = container.Resolve<ISpaceStorage>();
+            
             IEnumerable<ISpaceObject> spaceArray;
 
             // Try to load file provided
@@ -23,10 +28,16 @@ namespace SalaryFinanceHomework.StarSystemNavigator
                 throw new ArgumentException("File name is wrong or file can not be imported", ex);
             }
 
-
-
+            container.Dispose();
             Console.ReadKey();
             return 0;
+        }
+
+        private static WindsorContainer RegisterComponenets()
+        {
+            var container = new WindsorContainer();
+            container.Register(Component.For<ISpaceStorage>().ImplementedBy<SpaceStorage>());
+            return container;
         }
     }
 }
