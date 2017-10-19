@@ -5,7 +5,7 @@ using SalaryFinanceHomework.StarSystemFileSystem;
 using SalaryFinanceHomework.StarSystemNavigator.Worker;
 using System;
 using System.Collections.Generic;
-
+using System.Linq;
 
 namespace SalaryFinanceHomework.StarSystemNavigator
 {
@@ -31,10 +31,32 @@ namespace SalaryFinanceHomework.StarSystemNavigator
 
             // Find spaceship path to colonise it given space 
             var visitedPlanets = simulationEngine.Run(spaceArray);
+            var colonisedSurface = simulationEngine.CalculateHabitablePlanetsSurface(visitedPlanets);
+
+            PrintOutResults(visitedPlanets, colonisedSurface);
 
             container.Dispose();
             Console.ReadKey();
             return 0;
+        }
+
+        private static void PrintOutResults(IEnumerable<ISpaceObject> visitedPlanets, int colonisedSurface)
+        {
+            Console.WriteLine("Starship path");
+            Console.WriteLine($"Home World {SpaceRules.HomeWorld}");
+            foreach (var planet in visitedPlanets)
+            {
+                if (((Planet)planet).Habitable)
+                {
+                    Console.WriteLine($"Colonised planet {((Planet)planet).SpaceCoordinate}");
+                }
+                else
+                {
+                    Console.WriteLine($"Visited planet {((Planet)planet).SpaceCoordinate}");
+                }
+            }
+
+            Console.WriteLine($"Total colonised surface {colonisedSurface} sq km");
         }
 
         private static WindsorContainer RegisterComponenets()

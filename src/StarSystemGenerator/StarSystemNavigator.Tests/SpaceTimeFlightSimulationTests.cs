@@ -21,6 +21,7 @@ namespace SalaryFinanceHomework.StarSystemNavigator.Tests
             var simulator = new SpaceTimeFlightSimulation(new StarSystemFilter());
             var visitedPlanets = simulator.Run(spaceArray);
 
+            // Need to come up with better assert criteria
             Assert.That(visitedPlanets, Is.Not.Empty);
         }
 
@@ -41,7 +42,6 @@ namespace SalaryFinanceHomework.StarSystemNavigator.Tests
             var surface = simulator.CalculateHabitablePlanetsSurface(visitedPlanets);
 
             Assert.That(surface, Is.EqualTo(testSumOfSurface));
-
         }
     }
 }
