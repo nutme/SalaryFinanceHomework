@@ -53,6 +53,10 @@
       <Project>{eb421294-889d-45f1-96cc-9a50f37843aa}</Project>
       <Name>StarSystemCore</Name>
     </ProjectReference>
+    <ProjectReference Include="..\StarSystemFileSystem\StarSystemFileSystem.csproj">
+      <Project>{14051c8e-999d-4273-b7f6-d69058a18243}</Project>
+      <Name>StarSystemFileSystem</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StarSystemGenerator.Worker\StarSystemGenerator.Worker.csproj">
       <Project>{d46b5e2f-6a58-4f1d-a80c-4fdf50a96038}</Project>
       <Name>StarSystemGenerator.Worker</Name>
