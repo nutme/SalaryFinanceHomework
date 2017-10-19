@@ -18,11 +18,11 @@ namespace SalaryFinanceHomework.StarSystemNavigator.Tests
             var spacePopulator = new SpacePopulator(new CryptoRandomnessProvider());
             var spaceArray = spacePopulator.Run(numberOfSpaceObjects);
 
-            var simulator = new SpaceTimeFlightSimulation(new StarSystemFilter());
+            var simulator = new SpaceTimeFlightSimulation(new StarSystemFilter(), new SpaceCalculator());
             var visitedPlanets = simulator.Run(spaceArray);
 
             // Need to come up with better assert criteria
-            Assert.That(visitedPlanets, Is.Not.Empty);
+            Assert.That(visitedPlanets.VisitedPlanets, Is.Not.Empty);
         }
 
         [Test]
@@ -32,16 +32,12 @@ namespace SalaryFinanceHomework.StarSystemNavigator.Tests
             var spacePopulator = new SpacePopulator(new CryptoRandomnessProvider());
             var spaceArray = spacePopulator.Run(numberOfSpaceObjects);
 
-            var simulator = new SpaceTimeFlightSimulation(new StarSystemFilter());
+            var simulator = new SpaceTimeFlightSimulation(new StarSystemFilter(), new SpaceCalculator());
 
-            var planets = spaceArray.Where(o => o.SpaceObjectType == SpaceObjectType.Planet);
-            var visitedPlanets = planets.Take(200);
+            var simResult = simulator.Run(spaceArray);
 
-            var testSumOfSurface = visitedPlanets.Select(p => ((Planet)p).Habitable ? ((Planet)p).SurfaceArea : 0).Sum();
-
-            var surface = simulator.CalculateHabitablePlanetsSurface(visitedPlanets);
-
-            Assert.That(surface, Is.EqualTo(testSumOfSurface));
+            var testSumOfSurface = simResult.VisitedPlanets.Select(p => ((Planet)p).Habitable ? ((Planet)p).SurfaceArea : 0).Sum();
+            Assert.That(simResult.ColonisedSurface, Is.EqualTo(testSumOfSurface));
         }
     }
 }

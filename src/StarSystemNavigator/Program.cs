@@ -5,7 +5,6 @@ using SalaryFinanceHomework.StarSystemFileSystem;
 using SalaryFinanceHomework.StarSystemNavigator.Worker;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace SalaryFinanceHomework.StarSystemNavigator
 {
@@ -30,21 +29,18 @@ namespace SalaryFinanceHomework.StarSystemNavigator
             }
 
             // Find spaceship path to colonise it given space 
-            var visitedPlanets = simulationEngine.Run(spaceArray);
-            var colonisedSurface = simulationEngine.CalculateHabitablePlanetsSurface(visitedPlanets);
-
-            PrintOutResults(visitedPlanets, colonisedSurface);
+            var simResults = simulationEngine.Run(spaceArray);
+            PrintOutResults(simResults);
 
             container.Dispose();
-            Console.ReadKey();
             return 0;
         }
 
-        private static void PrintOutResults(IEnumerable<ISpaceObject> visitedPlanets, int colonisedSurface)
+        private static void PrintOutResults(SpaceTimeFlightSimulationResult simResult)
         {
             Console.WriteLine("Starship path");
             Console.WriteLine($"Home World {SpaceRules.HomeWorld}");
-            foreach (var planet in visitedPlanets)
+            foreach (var planet in simResult.VisitedPlanets)
             {
                 if (((Planet)planet).Habitable)
                 {
@@ -56,7 +52,7 @@ namespace SalaryFinanceHomework.StarSystemNavigator
                 }
             }
 
-            Console.WriteLine($"Total colonised surface {colonisedSurface} sq km");
+            Console.WriteLine($"Total colonised surface {simResult.ColonisedSurface} sq km");
         }
 
         private static WindsorContainer RegisterComponenets()
@@ -65,7 +61,8 @@ namespace SalaryFinanceHomework.StarSystemNavigator
             container.Register(Component.For<ISpaceStorage>().ImplementedBy<SpaceStorage>());
             container.Register(Component.For<IStarSystemFilter>().ImplementedBy<StarSystemFilter>());
             container.Register(Component.For<ISpaceTimeFlightSimulation>().ImplementedBy<SpaceTimeFlightSimulation>());
- 
+            container.Register(Component.For<ISpaceCalculator>().ImplementedBy<SpaceCalculator>());
+            
             return container;
         }
     }
