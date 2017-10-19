@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9F4E3F6E-9A0C-40B5-A52B-8511E5DAEE7C}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>SalaryFinanceHomework.StarSystemGenerator</RootNamespace>
-    <AssemblyName>SalaryFinanceHomework.StarSystemGenerator</AssemblyName>
+    <ProjectGuid>{14051C8E-999D-4273-B7F6-D69058A18243}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SalaryFinanceHomework.StarSystemFileSystem</RootNamespace>
+    <AssemblyName>SalaryFinanceHomework.StarSystemFileSystem</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,20 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <Compile Include="SpaceStorage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StarSystemCore\StarSystemCore.csproj">
       <Project>{eb421294-889d-45f1-96cc-9a50f37843aa}</Project>
       <Name>StarSystemCore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\StarSystemGenerator.Worker\StarSystemGenerator.Worker.csproj">
-      <Project>{d46b5e2f-6a58-4f1d-a80c-4fdf50a96038}</Project>
-      <Name>StarSystemGenerator.Worker</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

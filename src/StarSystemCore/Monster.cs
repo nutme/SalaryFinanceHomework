@@ -1,5 +1,8 @@
-﻿namespace SalaryFinanceHomework.StarSystemCore
+﻿using System;
+
+namespace SalaryFinanceHomework.StarSystemCore
 {
+    [Serializable]
     public class Monster : ISpaceObject
     {
         public SpaceCoordinate SpaceCoordinate { get; private set; }

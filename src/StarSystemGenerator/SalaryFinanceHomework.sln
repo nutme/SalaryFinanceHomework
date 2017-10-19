@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarSystemGenerator.Worker"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarSystemGenerator.Tests", "..\StarSystemGenerator.Tests\StarSystemGenerator.Tests.csproj", "{6F4BDCE8-3488-4FDD-807A-78A29F0CE95E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarSystemFileSystem", "..\StarSystemFileSystem\StarSystemFileSystem.csproj", "{14051C8E-999D-4273-B7F6-D69058A18243}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarSystemFileSystem.Tests", "..\StarSystemFileGenerator.Tests\StarSystemFileSystem.Tests.csproj", "{106EB0D5-388E-4681-B604-C3040FDACE7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{6F4BDCE8-3488-4FDD-807A-78A29F0CE95E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F4BDCE8-3488-4FDD-807A-78A29F0CE95E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F4BDCE8-3488-4FDD-807A-78A29F0CE95E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14051C8E-999D-4273-B7F6-D69058A18243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14051C8E-999D-4273-B7F6-D69058A18243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14051C8E-999D-4273-B7F6-D69058A18243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14051C8E-999D-4273-B7F6-D69058A18243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{106EB0D5-388E-4681-B604-C3040FDACE7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{106EB0D5-388E-4681-B604-C3040FDACE7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{106EB0D5-388E-4681-B604-C3040FDACE7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{106EB0D5-388E-4681-B604-C3040FDACE7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
