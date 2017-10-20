@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColonizationMeter.cs" />
     <Compile Include="SpaceCalculator.cs" />
     <Compile Include="ISpaceCalculator.cs" />
     <Compile Include="ISpaceTimeFlightSimulation.cs" />

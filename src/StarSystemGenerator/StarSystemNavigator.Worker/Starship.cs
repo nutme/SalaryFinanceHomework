@@ -10,7 +10,6 @@ namespace SalaryFinanceHomework.StarSystemNavigator.Worker
         private readonly TimeSpan flightSpeed;
         private readonly TimeSpan colonisationSpeed;
         private SpaceCoordinate shipCoordinate;
-        private ColonizationMeter meter;
 
         public Starship(SpaceCoordinate coordinate, TimeSpan lifeTime, TimeSpan flightSpeed, TimeSpan colonisationSpeed)
         {
@@ -19,7 +18,6 @@ namespace SalaryFinanceHomework.StarSystemNavigator.Worker
             this.flightSpeed = flightSpeed;
             this.colonisationSpeed = colonisationSpeed;
             shipCoordinate = SpaceRules.HomeWorld;
-            meter = new ColonizationMeter();
         }
 
         public void Flight(SpaceCoordinate coordinate)
