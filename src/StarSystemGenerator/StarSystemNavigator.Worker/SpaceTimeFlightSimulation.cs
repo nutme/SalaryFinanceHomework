@@ -52,9 +52,6 @@ namespace SalaryFinanceHomework.StarSystemNavigator.Worker
                     continue;
                 }
 
-                visitedPlanets.Add(closestPlanet);
-                planetsArray.Remove(closestPlanet);
-
                 // once in new worl try to colonize it
                 // if planet not habitable do nothing and fly away
                 if (closestPlanet.Habitable)
@@ -73,6 +70,9 @@ namespace SalaryFinanceHomework.StarSystemNavigator.Worker
                         continue;
                     }
                 }
+
+                visitedPlanets.Add(closestPlanet);
+                planetsArray.Remove(closestPlanet);
             }
 
             var colonisedSurface = spaceCalculator.CalculateHabitablePlanetsSurface(visitedPlanets);
