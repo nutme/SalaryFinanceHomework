@@ -19,9 +19,7 @@ namespace SalaryFinanceHomework.StarSystemCore
         public override string ToString()
         {
             // example: 123.123.99.1 X & 098.098.11.1 Y & 456.456.99.9 Z
-            return $"{X.ToString(@"000\.000\.00\.0")} X & {Y.ToString(@"###\.###\.##\.#0")} Y & {Z.ToString(@"###\.###\.##\.#0")} Z";
-
-//            return $"{X.ToString(@"###\.###\.##\.#0")} X & {Y.ToString(@"###\.###\.##\.#0")} Y & {Z.ToString(@"###\.###\.##\.#0")} Z";
+            return $"{X.ToString(@"000\.000\.00\.0")} X & {Y.ToString(@"000\.000\.00\.0")} Y & {Z.ToString(@"000\.000\.00\.0")} Z";
         }
     }
 }
